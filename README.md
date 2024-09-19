@@ -19,8 +19,40 @@
     ```
 12. Update the `sample_app/package.json` file's `{"scripts: { "dev": "vite" }}` attribute to be "vite --host --port 80" to allow Vite to flow through Docker.
     A list of the CLI options are [here](https://vitejs.dev/guide/cli.html).
-13. Validate the website can be launched manually from inside the container by running the below, _then_ browsing to `http://localhost` on the local machine.
+13. Validate the website can be launched manually from inside a _dev_ container by running the below, _then_ browsing to `http://localhost` on the local machine.
     ```
     npm run dev
     ```
 14. Commit
+15. Drop out of the container using _F1 > Dev Containers: Reopen Folder Locally_
+16. Update the `Dockerfile` to include the sourcecode as below
+    ```
+    COPY ./sample_app ./sample_app
+    WORKDIR /usr/src/sample_app
+    RUN ["npm", "install"]
+    ```
+17. Update the `Dockerfile` to run the site as below
+    ```
+    EXPOSE 80
+    CMD ["npm", "run", "dev"]
+    ```
+18. Add in the `.dockerignore` file
+19. Open a terminal using _Ctrl + Shift + `_
+20. Build and run the container manualy as below.
+    Ignore the "No such image" error from `docker rmi`
+    ```
+    docker rmi minimumvite
+    docker build -t minimumvite:latest --no-cache .
+    docker run --rm -p 80:80 --name demo_minimumvite minimumvite
+    ```
+21. Validate the website can be launched manually from inside a _standard_ container by browsing to `http://localhost` on the local machine.
+22. Commit
+
+
+
+
+
+
+Review later
+
+* https://github.com/BretFisher/node-docker-good-defaults
