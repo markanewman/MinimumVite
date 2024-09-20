@@ -46,7 +46,13 @@
     docker run --rm -p 80:80 --name demo_minimumvite minimumvite
     ```
 21. Validate the website can be launched manually from inside a _standard_ container by browsing to `http://localhost` on the local machine.
+23. Re-launch VSCode using _F1 > Dev Containers: Rebuild and Reopen in Container_
+24. Validate that the app still runs inside the dev container by running the below then browsing using the local machine
+    ```
+    npm run dev
+    ```
 22. Commit
+
 
 
 
