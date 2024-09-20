@@ -49,6 +49,7 @@
 23. Re-launch VSCode using _F1 > Dev Containers: Rebuild and Reopen in Container_
 24. Validate that the app still runs inside the dev container by running the below then browsing using the local machine
     ```
+    cd sample_app
     npm run dev
     ```
 22. Commit
@@ -62,3 +63,5 @@
 Review later
 
 * https://github.com/BretFisher/node-docker-good-defaults
+* https://blog.logrocket.com/using-dev-containers-vs-code-easier-dev-setup/
+* https://code.visualstudio.com/Docs/editor/tasks

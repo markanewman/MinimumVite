@@ -1,0 +1,20 @@
+{
+    "version":"0.2.0",
+    "configurations":[
+      {
+         "type": "msedge",
+         "request":"launch",
+         "name":"Launch Edge against localhost",
+         "url":"http://localhost:80",
+         "webRoot":"${workspaceFolder}/sample_app",
+         "preLaunchTask": "Start Frontend",
+      },
+      {
+         "type": "chrome",
+         "request":"launch",
+         "name":"Launch Chrome against localhost",
+         "url":"http://localhost:80",
+         "webRoot":"${workspaceFolder}/sample_app"
+      }
+    ]
+ }

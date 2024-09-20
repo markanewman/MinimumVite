@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install Dependencies",
+            "type": "shell",
+            "command": "npm",
+            "args": [ "install" ],
+            "options": {
+                "cwd": "${workspaceFolder}/sample_app"
+            }
+        },
+        {
+            "label": "Build Frontend",
+            "type": "shell",
+            "command": "npm",
+            "args": [ "run", "build" ],
+            "options": {
+                "cwd": "${workspaceFolder}/sample_app"
+            },
+            "dependsOn": [ "Install Dependencies" ]
+        },
+        {
+            "label": "Start Frontend",
+            "type": "shell",
+            "command": "npm",
+            "args": [ "run", "dev" ],
+            "options": {
+                "cwd": "${workspaceFolder}/sample_app"
+            },
+            "dependsOn": [ "Build Frontend" ]
+        }
+    ]
+}
